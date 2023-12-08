@@ -1,0 +1,17 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}Create Task{% endblock content %}
+
+{% block content %}
+<a href="{% url 'tasks' %}">Go to Tasks List</a>
+
+<h1>Create new task</h1>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <!-- <input type="text" placeholder="Title"/>
+    <input type="textarea" placeholder="Add description for task"/> -->
+    <input type="submit" value='Submit'/>
+    
+</form>
+{% endblock content %}
